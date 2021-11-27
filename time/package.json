@@ -1,0 +1,36 @@
+{
+  "name": "@ndutils/time",
+  "version": "0.1.0",
+  "description": "Cross-platform tools for system clock.",
+  "main": "dist/index.js",
+  "scripts": {
+    "postinstall": "tsc -d -p .",
+    "test": "npx ts-node test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eptr/ndutils.git"
+  },
+  "keywords": [
+    "utils",
+    "clock"
+  ],
+  "author": "io.ptr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eptr/ndutils/issues"
+  },
+  "homepage": "https://github.com/eptr/ndutils#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.10",
+    "moment": "^2.29.1",
+    "sudo-prompt": "^9.2.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "tsc": "^2.0.3"
+  }
+}

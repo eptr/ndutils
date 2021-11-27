@@ -1,0 +1,5 @@
+.idea
+*.ts
+*.js.map
+package-lock.json
+tsconfig.json
