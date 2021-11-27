@@ -6,7 +6,6 @@
     ],
     "module": "commonjs",
     "target": "es2015",
-    "outDir": "dist",
     "sourceMap": true
   },
   "exclude": [

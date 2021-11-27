@@ -2,9 +2,8 @@
   "name": "@ndutils/time",
   "version": "0.1.0",
   "description": "Cross-platform tools for system clock.",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "tsc -d -p .",
     "test": "npx ts-node test.ts"
   },
   "repository": {

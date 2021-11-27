@@ -1,5 +1,7 @@
 .idea
 *.ts
+test.*
+!*.d.ts
 *.js.map
 package-lock.json
 tsconfig.json

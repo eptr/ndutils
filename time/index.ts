@@ -1,24 +1,30 @@
 import * as os from 'os';
 import * as sudo from 'sudo-prompt';
 import * as moment from 'moment';
+import {Buffer} from "buffer";
+
+declare interface stdio {
+    stdout: string | Buffer,
+    stderr: string | Buffer
+}
 
 export class TimeUtils {
 
     private static execute(cmd: string,
                            option?: { name?: string, icns?: string, env?: { [key: string]: string } }) {
-        return new Promise((resolve, reject) => {
+        return new Promise<stdio>((resolve, reject) => {
             sudo.exec(cmd, option || {},
                 (error, stdout, stderr) => {
                     if (error) {
                         reject(error);
                     }
-                    resolve({stdout, stderr});
+                    resolve({stdout: stdout, stderr: stderr});
                 });
         });
     }
 
     static setClock(date?: Date,
-                    option?: { name?: string, icns?: string, env?: { [key: string]: string } }): Promise<any> {
+                    option?: { name: string; icns?: string; env?: { [key: string]: string; }; }): Promise<stdio> {
         if (os.platform() == 'win32') {
             if (date) {
                 const cmds = [
